@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Locale;
+
 public class MainClassTest extends MainClass {
 
     @Test
@@ -20,5 +22,14 @@ public class MainClassTest extends MainClass {
         if (actual_number < expected_number) {
             Assert.fail("getClassNumber returns number less than 45");
         }
+    }
+
+    @Test
+    public void testGetClassString() {
+        String expected_string;
+        expected_string = "hello";
+        String actual_string;
+        actual_string = this.getClassString();
+        Assert.assertTrue(actual_string+ " does not contain "+expected_string,actual_string.toLowerCase().contains(expected_string.toLowerCase()));
     }
 }
